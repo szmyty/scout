@@ -52,3 +52,7 @@ The public site is intentionally lossy. Its source data is reviewed before it en
 ## License
 
 [MIT](LICENSE)
+
+## Decision model
+
+[PursuitEV](docs/PURSUIT-EV.md) documents the versioned decision aid used privately to prioritize sustainable applications. Scout never publishes the private inputs, estimates, or application materials behind a queue record.
