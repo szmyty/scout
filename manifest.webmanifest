@@ -1,0 +1,18 @@
+{
+  "name": "Scout — Research Career Queue",
+  "short_name": "Scout",
+  "description": "A calm, public research-software opportunity queue.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#08101f",
+  "theme_color": "#0b1426",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
