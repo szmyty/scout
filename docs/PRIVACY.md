@@ -1,35 +1,44 @@
 # Privacy boundary
 
-Scout is fully public. The source repository, Git history, workflow artifacts, and deployed files must all be treated as internet-visible.
+Scout is fully public. The source repository, Git history, workflow artifacts,
+and deployed files must all be treated as internet-visible.
 
 ## Allowed
 
-- Public employer and role names.
-- Public posting URLs.
-- Coarse location and country.
-- Reviewed fit score, priority, status, deadline, and verification date.
-- Short public-safe summary and next action.
+- Broad, owner-approved career lanes.
+- High-level engineering interests and evaluation principles.
+- Deliberately delayed aggregate updates that cannot reveal individual targets.
+- A public/private publication-boundary statement.
 
 ## Prohibited
 
+- Employer or role targets and posting URLs.
+- Application state, priority, fit scores, deadlines, verification dates, or
+  next actions.
 - Resumes, CVs, letters, supplements, screenshots, or submission evidence.
 - Email addresses, phone numbers, home addresses, or private correspondence.
 - Reference identities or contact details.
 - Health, financial, benefits, family, legal, or transition context.
 - Private notes, application answers, recruiter messages, or interview notes.
-- Private repository URLs, private paths, tokens, credentials, or signed links.
+- Private repository URLs, paths, tokens, credentials, or signed links.
 
-## Owner mode
+## Publication model
 
-Owner mode stores an optional repository URL and branch in the current browser's local storage. The repository URL is never committed, transmitted to Scout, or included in analytics because Scout has no analytics. No token is collected.
-
-The resulting workspace link is a normal browser navigation. GitHub remains responsible for authentication and authorization.
+Private career operations are canonical. Scout receives only a manually
+reviewed, broad projection. It never fetches private data, authenticates an
+owner, stores device-local repository settings, or constructs private workspace
+links.
 
 ## Publication checklist
 
-1. Validate the snapshot.
-2. Inspect the full diff.
-3. Confirm every URL is intentionally public.
-4. Search for contact information and document filenames.
-5. Confirm status wording reveals no private correspondence.
-6. Build from the allowlist and inspect the generated file inventory.
+1. Confirm the update is aggregate and intentionally public.
+2. Run "python3 scripts/validate.py".
+3. Run "python3 scripts/test_public_boundary.py".
+4. Run "python3 scripts/build.py".
+5. Inspect the complete source and generated diff.
+6. Confirm "data/public-summary.json" is the only data file.
+7. Confirm the built artifact contains no live-tracker assets or operational
+   records.
+
+Historical remediation, visibility changes, Pages changes, and cache purges
+require a separate owner-approved operation.

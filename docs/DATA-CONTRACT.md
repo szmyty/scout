@@ -1,35 +1,37 @@
-# Public data contract
+# Aggregate public data contract
 
-"data/jobs.json" is a reviewed snapshot, not a live API.
+"data/public-summary.json" is a reviewed projection, not a live API or
+application queue.
 
 ## Top level
 
 | Field | Type | Meaning |
 | --- | --- | --- |
-| "schema_version" | string | Contract version |
-| "generated_at" | ISO date | Snapshot date |
-| "notice" | string | Freshness and interpretation warning |
-| "jobs" | array | Approved public records |
+| "schema_version" | string | Contract version; currently "2.0.0" |
+| "generated_at" | ISO date | Date the public projection was reviewed |
+| "notice" | string | Publication and freshness boundary |
+| "focus_areas" | array | Broad owner-approved career lanes |
+| "publication_model" | object | Explicit public/private split |
 
-## Job record
+## Focus area
 
 | Field | Type | Meaning |
 | --- | --- | --- |
-| "id" | slug | Stable record identity |
-| "employer" | string | Public organization name |
-| "title" | string | Public role title |
-| "location" | string | Coarse public location |
-| "country" | string | Country or public jurisdiction |
-| "lane" | enum | Career lane used for filtering |
-| "url" | URL or null | Public posting or source |
-| "fit_score" | integer 0–100 | Internal prioritization score |
-| "priority" | enum | A, B, C, skip, or hard_reject |
-| "status" | enum | Public lifecycle state |
-| "deadline" | ISO date or null | Captured application deadline |
-| "verified_at" | ISO date or null | Last official-source check |
-| "summary" | string | Public-safe role summary |
-| "next_action" | string | Public-safe operational step |
+| "id" | slug | Stable public focus identifier |
+| "label" | string | Human-readable career lane |
+| "position" | enum | "primary", "secondary", or "targeted" |
+| "summary" | string | Broad description with no live target data |
 
-Unknown facts remain null or explicit unknown text in the private source. Scout does not invent them.
+## Publication model
 
-Changes to this contract require synchronized validator, renderer, and documentation updates.
+The object contains exactly "public" and "private" strings describing the
+boundary. It contains no direct URLs or operational records.
+
+## Rejected information
+
+The validator rejects employer, role title, location, URL, fit score, priority,
+status, deadline, verification date, next action, contact details, private paths,
+and additional files beneath "data/".
+
+Changes to this contract require synchronized validator, regression-test,
+documentation, and static-copy updates.

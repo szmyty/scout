@@ -16,5 +16,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Validate public data and source
         run: python3 scripts/validate.py
+      - name: Test aggregate-only public boundary
+        run: python3 scripts/test_public_boundary.py
       - name: Build allowlisted static artifact
         run: python3 scripts/build.py

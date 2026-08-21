@@ -5,10 +5,10 @@ Scout uses a restrained nocturnal field-notebook aesthetic.
 ## Principles
 
 - Calm over urgency theater.
-- Useful density without cramped dashboard chrome.
-- Operational hierarchy over decorative metrics.
-- Distinct status signals that remain understandable without color.
-- Motion only when it helps orientation.
+- Direction over operational surveillance.
+- Clear publication boundaries over decorative metrics.
+- Distinct signals that remain understandable without color.
+- Complete meaning in semantic HTML without JavaScript.
 
 ## Tokens
 
@@ -24,9 +24,10 @@ Typography uses the local system stack. No external font request is required.
 
 ## Components
 
-- Summary cards use large values and concise labels.
-- Filter controls are native inputs with clear labels.
-- Job cards carry status, score, deadline, next action, and public links.
-- Owner mode is a native dialog and never contains a credential field.
+- The hero explains that Scout is a public map rather than a live tracker.
+- Direction cards distinguish primary, secondary, and targeted lanes.
+- Focus cards explain broad engineering interests without employer data.
+- The publication-boundary section names what remains public and private.
 
-The CSS supports reduced motion, high-contrast focus rings, narrow phones, and wide multi-column layouts.
+The CSS supports reduced motion, high-contrast focus rings, narrow phones, and
+wide layouts.

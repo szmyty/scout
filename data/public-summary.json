@@ -1,0 +1,29 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-08-21",
+  "notice": "This public snapshot describes career direction only. Live targets and application operations remain private.",
+  "focus_areas": [
+    {
+      "id": "platform-devex",
+      "label": "Platform and developer experience",
+      "position": "primary",
+      "summary": "Reliable developer platforms, delivery systems, and tooling that make engineering work easier to understand and operate."
+    },
+    {
+      "id": "research-ai",
+      "label": "Research and AI-assisted systems",
+      "position": "secondary",
+      "summary": "Reproducible research software and carefully bounded AI-assisted workflows with explicit human review."
+    },
+    {
+      "id": "mobile-geospatial",
+      "label": "Mobile and geospatial systems",
+      "position": "targeted",
+      "summary": "Selected roles where mobile delivery, visualization, or geospatial decision-support experience is directly relevant."
+    }
+  ],
+  "publication_model": {
+    "public": "Broad career lanes, evaluation principles, and intentionally delayed aggregate updates.",
+    "private": "Employer and role targets, application state, deadlines, scores, next actions, materials, correspondence, and decision context."
+  }
+}

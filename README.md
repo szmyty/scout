@@ -1,53 +1,59 @@
 # 🧭 Scout
 
-A public, privacy-safe job-application queue and research-career scouting dashboard.
+A privacy-preserving public career compass.
 
-Scout turns a reviewed static snapshot into a calm operational view: what is submitted, what is being prepared, which deadlines are close, which listings need reverification, and what to do next.
+Scout communicates Alan Szmyt's broad engineering direction without publishing
+the live application strategy behind it. The public site contains three reviewed
+focus areas and a clear publication boundary. Employer and role targets,
+application state, deadlines, scores, next actions, materials, correspondence,
+and decision context stay private.
 
-## What it does
+## Public surface
 
-- Displays the public-safe research software opportunity queue.
-- Searches and filters by status, priority, lane, and country.
-- Sorts by recommendation, deadline, fit score, or employer.
-- Highlights urgent deadlines without pretending stale postings are current.
-- Offers an optional owner mode that stores a private repository URL only in the owner's browser and opens the matching private workspace through the owner's existing GitHub session.
-- Publishes no resumes, letters, references, contact details, private notes, or credentials.
+- Platform and developer experience as the primary lane.
+- Research and AI-assisted systems as the secondary lane.
+- Mobile and geospatial systems as a targeted differentiator.
+- A deliberately aggregate, manually reviewed publication model.
+
+Scout is not a job board, application queue, progress feed, or source of live
+career operations.
 
 ## Architecture
 
 Scout is a dependency-free static site:
 
-- "index.html" — accessible document shell.
-- "assets/styles.css" — responsive visual system.
-- "assets/app.js" — rendering, filters, sorting, copy actions, and owner mode.
-- "data/jobs.json" — reviewed public snapshot.
-- "scripts/validate.py" — data and privacy validation.
-- "scripts/build.py" — deterministic allowlisted build into "dist/".
-- ".github/workflows/" — pull-request validation and GitHub Pages deployment after merge.
+- "index.html" contains the complete semantic experience.
+- "assets/styles.css" owns the responsive visual system.
+- "data/public-summary.json" is the only allowed public data file.
+- "scripts/validate.py" enforces the aggregate-only contract.
+- "scripts/test_public_boundary.py" proves live application fields are rejected.
+- "scripts/build.py" copies a strict allowlist into "dist/".
+- GitHub Actions validates pull requests and publishes after merge.
 
 Read [AGENTS.md](AGENTS.md) before changing data or behavior.
 
-## Local use
+## Local validation
 
-Run:
+```console
+python3 scripts/validate.py
+python3 scripts/test_public_boundary.py
+python3 scripts/build.py
+python3 -m http.server --directory dist 8000
+```
 
-    python3 scripts/validate.py
-    python3 scripts/build.py
-    python3 -m http.server --directory dist 8000
-
-Then open "http://localhost:8000/scout/" only if serving the repository under a "scout" prefix, or "http://localhost:8000/" for the generated root directly.
+Then open "http://localhost:8000/".
 
 ## Publishing
 
-The repository uses the "master" branch. After the setup PR is merged, enable GitHub Pages with "GitHub Actions" as the source in repository settings if it is not already enabled. The deployment workflow publishes the validated "dist/" artifact.
+The repository uses the "master" branch. GitHub Pages deploys the allowlisted
+"dist/" artifact after a reviewed merge.
 
-Expected project-site URL:
-
-https://szmyty.github.io/scout/
+Expected project-site URL: <https://szmyty.github.io/scout/>
 
 ## Privacy
 
-The public site is intentionally lossy. Its source data is reviewed before it enters this repository. Owner mode stores configuration only in browser local storage; it publishes no private repository URL or token and never fetches private data.
+The repository, history, workflow artifacts, and deployed site are public. Only
+reviewed aggregate direction belongs here. See [docs/PRIVACY.md](docs/PRIVACY.md).
 
 ## License
 

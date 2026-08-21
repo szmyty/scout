@@ -1,7 +1,7 @@
 {
-  "name": "Scout — Research Career Queue",
+  "name": "Scout — Public Career Compass",
   "short_name": "Scout",
-  "description": "A calm, public research-software opportunity queue.",
+  "description": "A privacy-preserving map of broad engineering career direction.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

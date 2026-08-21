@@ -1,27 +1,32 @@
 # Maintenance workflow
 
-## Refreshing jobs
+## Updating public direction
 
-1. Complete research and private review outside this repository.
-2. Copy only the approved public snapshot into "data/jobs.json".
-3. Run validation and the deterministic build.
-4. Review every changed line.
-5. Open a focused draft pull request.
-6. Merge only after Alan's review.
+1. Complete career research and application work outside this repository.
+2. Produce only a broad, deliberately aggregate public projection.
+3. Review it against "docs/PRIVACY.md".
+4. Replace "data/public-summary.json" without adding fields or files.
+5. Synchronize visible static copy when positioning changes.
+6. Run validation, boundary tests, and the deterministic build.
+7. Review every changed line.
+8. Open a focused draft pull request.
+9. Merge only after Alan's review.
 
-## Changing the site
+## Required checks
 
-Keep behavior dependency-free unless a reviewed requirement justifies more infrastructure. Test:
+```console
+python3 scripts/validate.py
+python3 scripts/test_public_boundary.py
+python3 scripts/build.py
+```
 
-- Empty and no-match states.
-- Every filter and sort.
-- Owner mode save and clear behavior.
-- Keyboard navigation.
-- Narrow viewport wrapping.
-- Relative URLs under the "/scout/" GitHub Pages path.
+Test the semantic shell at narrow and desktop widths, with keyboard navigation
+and reduced motion.
 
 ## Publishing
 
-Pull requests run validation only. A merge to "master" runs validation, creates the allowlisted static artifact, and deploys it through GitHub Pages.
+Pull requests validate only. A merge to "master" validates, builds the strict
+allowlisted artifact, and deploys it through GitHub Pages.
 
-If the deployment workflow reports that Pages is not configured, set repository Settings → Pages → Source to "GitHub Actions" and rerun the workflow. This is a one-time repository setting.
+History rewrites, repository visibility changes, and Pages changes are separate
+owner-approved operations.

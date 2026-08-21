@@ -11,10 +11,9 @@ ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 PUBLIC_FILES = (
     ".nojekyll",
-    "assets/app.js",
     "assets/favicon.svg",
     "assets/styles.css",
-    "data/jobs.json",
+    "data/public-summary.json",
     "index.html",
     "manifest.webmanifest",
     "robots.txt",
