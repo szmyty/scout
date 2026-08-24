@@ -200,6 +200,22 @@
 
         <div class="job-grid" id="job-grid" aria-busy="true"></div>
 
+        <section class="submitted-section is-hidden" id="submitted-section" aria-label="Submitted applications">
+          <details class="submitted-details" id="submitted-details">
+            <summary>
+              <span>
+                <span class="submitted-kicker">Application history</span>
+                <strong>Submitted applications</strong>
+              </span>
+              <span class="submitted-count"><span id="submitted-count">0</span> confirmed sent</span>
+            </summary>
+            <p class="submitted-intro">
+              Confirmed submissions stay available here while the active queue remains focused on what needs attention next.
+            </p>
+            <div class="job-grid submitted-job-grid" id="submitted-job-grid" aria-busy="true"></div>
+          </details>
+        </section>
+
         <div class="empty-state is-hidden" id="empty-state">
           <span aria-hidden="true">◇</span>
           <h3>No signal matches that view.</h3>
@@ -348,7 +364,7 @@
             <dd class="job-lane"></dd>
           </div>
           <div>
-            <dt>Deadline</dt>
+            <dt class="job-date-label">Deadline</dt>
             <dd class="job-deadline"></dd>
           </div>
           <div>
