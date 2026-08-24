@@ -10,12 +10,14 @@ Scout turns a reviewed static snapshot into a calm operational view: what is sub
 - Searches and filters by status, priority, lane, and country.
 - Sorts by recommendation, deadline, fit score, or employer.
 - Highlights urgent deadlines without pretending stale postings are current.
+- Keeps owner-confirmed submissions in a collapsed history section with date-level status only.
 - Offers an optional owner mode that stores a private repository URL only in the owner's browser and opens the matching private workspace through the owner's existing GitHub session.
 - Publishes no resumes, letters, references, contact details, private notes, or credentials.
 
 ## Architecture
 
-Scout is a dependency-free static site:
+Scout is a dependency-free static site. Routine status refreshes are a small, validated edit to `data/jobs.json`; see [the maintenance workflow](docs/WORKFLOW.md).
+
 
 - "index.html" — accessible document shell.
 - "assets/styles.css" — responsive visual system.
