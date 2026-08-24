@@ -1328,3 +1328,94 @@ footer a {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+.submitted-section {
+  margin-top: 1.5rem;
+}
+
+.submitted-details {
+  border: 1px solid var(--line);
+  border-radius: 1.15rem;
+  background: color-mix(in srgb, var(--surface) 84%, transparent);
+  overflow: clip;
+}
+
+.submitted-details > summary {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  list-style: none;
+  padding: 1rem 1.15rem;
+}
+
+.submitted-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.submitted-details > summary::after {
+  color: var(--text-muted);
+  content: "+";
+  font-size: 1.4rem;
+  line-height: 1;
+  order: -1;
+}
+
+.submitted-details[open] > summary::after {
+  content: "−";
+}
+
+.submitted-details > summary:focus-visible {
+  border-radius: 1rem;
+  outline: 3px solid var(--focus);
+  outline-offset: -3px;
+}
+
+.submitted-kicker {
+  color: var(--text-muted);
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  margin-bottom: 0.18rem;
+  text-transform: uppercase;
+}
+
+.submitted-details strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.submitted-count {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.submitted-intro {
+  border-top: 1px solid var(--line);
+  color: var(--text-muted);
+  margin: 0;
+  padding: 1rem 1.15rem 0;
+}
+
+.submitted-job-grid {
+  padding: 1rem 1.15rem 1.15rem;
+}
+
+@media (max-width: 36rem) {
+  .submitted-details > summary {
+    align-items: flex-start;
+  }
+
+  .submitted-count {
+    text-align: right;
+    white-space: normal;
+  }
+
+  .submitted-job-grid {
+    padding-inline: 0.85rem;
+  }
+}
