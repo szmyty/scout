@@ -26,7 +26,8 @@ Typography uses the local system stack. No external font request is required.
 
 - Summary cards use large values and concise labels.
 - Filter controls are native inputs with clear labels.
-- Job cards carry status, score, deadline, next action, and public links.
+- Job cards carry status, score, deadline or approved submission date, next action, and public links.
+- Submitted applications live in a native closed `<details>` history panel so the active queue remains the default focus.
 - Owner mode is a native dialog and never contains a credential field.
 
 The CSS supports reduced motion, high-contrast focus rings, narrow phones, and wide multi-column layouts.
