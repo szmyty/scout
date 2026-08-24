@@ -7,7 +7,7 @@ Scout is fully public. The source repository, Git history, workflow artifacts, a
 - Public employer and role names.
 - Public posting URLs.
 - Coarse location and country.
-- Reviewed fit score, priority, status, deadline, and verification date.
+- Reviewed fit score, priority, status, deadline, verification date, and owner-approved day-level submission date.
 - Short public-safe summary and next action.
 
 ## Prohibited
@@ -31,5 +31,5 @@ The resulting workspace link is a normal browser navigation. GitHub remains resp
 2. Inspect the full diff.
 3. Confirm every URL is intentionally public.
 4. Search for contact information and document filenames.
-5. Confirm status wording reveals no private correspondence.
+5. Confirm status wording reveals no private correspondence; show submission dates only after the owner confirms them and never publish times or evidence.
 6. Build from the allowlist and inspect the generated file inventory.
