@@ -1,12 +1,12 @@
 {
-  "name": "Scout — Research Career Queue",
+  "name": "Scout — Under Construction",
   "short_name": "Scout",
-  "description": "A calm, public research-software opportunity queue.",
+  "description": "A public research-career discovery tool under construction.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#08101f",
-  "theme_color": "#0b1426",
+  "theme_color": "#08101f",
   "icons": [
     {
       "src": "assets/favicon.svg",

@@ -1,26 +1,22 @@
 #!/usr/bin/env python3
-"""Build Scout by copying a strict public allowlist into dist."""
+"""Build Scout's public under-construction page from a strict allowlist."""
 
 from __future__ import annotations
 
 import shutil
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 PUBLIC_FILES = (
     ".nojekyll",
-    "assets/app.js",
     "assets/favicon.svg",
     "assets/styles.css",
-    "data/jobs.json",
     "index.html",
     "manifest.webmanifest",
     "robots.txt",
     "sitemap.xml",
 )
-
 
 def main() -> int:
     if DIST.exists():
@@ -35,24 +31,11 @@ def main() -> int:
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
 
-    built = {
-        path.relative_to(DIST).as_posix()
-        for path in DIST.rglob("*")
-        if path.is_file()
-    }
-    expected = set(PUBLIC_FILES)
-    if built != expected:
-        raise SystemExit(
-            "Built file inventory differs from allowlist: "
-            f"missing={sorted(expected - built)}, extra={sorted(built - expected)}"
-        )
-
-    if any(path.is_symlink() for path in DIST.rglob("*")):
-        raise SystemExit("The public artifact must not contain symbolic links.")
-
-    print(f"Built {len(built)} allowlisted public files in {DIST}.")
+    built = {path.relative_to(DIST).as_posix() for path in DIST.rglob("*") if path.is_file()}
+    if built != set(PUBLIC_FILES):
+        raise SystemExit(f"Built file inventory differs from allowlist: {sorted(built)}")
+    print(f"Built {len(built)} public placeholder files in {DIST}.")
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())
