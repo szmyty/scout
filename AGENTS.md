@@ -63,6 +63,7 @@ Each public job must contain exactly:
 - "fit_score"
 - "priority"
 - "status"
+- "submitted_at"
 - "deadline"
 - "verified_at"
 - "summary"
@@ -70,7 +71,7 @@ Each public job must contain exactly:
 
 Allowed lifecycle states currently include "queued", "preparing", "needs_reverification", "submitted", and "watch". The UI must tolerate future states defined by the validator.
 
-IDs are stable lowercase slugs. Deadlines and verification dates use "YYYY-MM-DD". A missing deadline is null, not a guessed rolling date.
+IDs are stable lowercase slugs. Submission, deadline, and verification dates use "YYYY-MM-DD". "submitted_at" is null until a submission is owner-confirmed; once public, it records only the date, never a time, confirmation artifact, or correspondence. A missing deadline is null, not a guessed rolling date.
 
 The public export is intentionally limited to approved jobs. Do not infer that missing private jobs do not exist.
 
@@ -158,7 +159,7 @@ Do not introduce npm, a bundler, analytics, trackers, cookies, external fonts, r
 Use direct, grounded language:
 
 - "Fit score" is an internal prioritization aid, not an objective probability.
-- "Submitted" means the application was confirmed as sent.
+- "Submitted" means the application was owner-confirmed as sent. Submitted cards render in a collapsed history section and show only the approved submission date.
 - "Reverify" means the posting state or another volatile fact must be checked.
 - Deadline warnings must say that the employer page remains authoritative.
 
@@ -169,7 +170,7 @@ Do not claim sponsorship, compensation, vacancy status, or deadline freshness be
 For a routine data refresh:
 
 1. Obtain the newly reviewed public snapshot from the private process.
-2. Replace "data/jobs.json" without adding fields.
+2. Update only approved records in "data/jobs.json". For an owner-confirmed submission, set "status" to "submitted", set the date-only "submitted_at" value, and refresh "generated_at"; leave "submitted_at" null for every other lifecycle state.
 3. Run "python3 scripts/validate.py".
 4. Run "python3 scripts/build.py".
 5. Inspect the diff for private material and stale copy.
