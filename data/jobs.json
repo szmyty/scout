@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.0.0",
-  "generated_at": "2026-08-20",
+  "schema_version": "1.1.0",
+  "generated_at": "2026-08-23",
   "notice": "Public, human-reviewed projection. Posting status and deadlines may change; follow the employer link.",
   "jobs": [
     {
@@ -17,7 +17,8 @@
       "deadline": null,
       "verified_at": "2026-08-12",
       "summary": "Research software and 3D geospatial visualization role.",
-      "next_action": "Await response and archive any correspondence."
+      "next_action": "Await response and archive any correspondence.",
+      "submitted_at": "2026-08-12"
     },
     {
       "id": "many-brains-scientific-software-engineer",
@@ -33,7 +34,8 @@
       "deadline": null,
       "verified_at": "2026-08-13",
       "summary": "Scientific software for cognitive and behavioral research infrastructure.",
-      "next_action": "Await response; record any follow-up."
+      "next_action": "Await response; record any follow-up.",
+      "submitted_at": "2026-08-13"
     },
     {
       "id": "dkrz-development-workflows",
@@ -49,7 +51,8 @@
       "deadline": null,
       "verified_at": "2026-08-13",
       "summary": "Developer workflows, CI feedback, reproducibility, and scientific software.",
-      "next_action": "Await response; preserve portal confirmation if received."
+      "next_action": "Await response; preserve portal confirmation if received.",
+      "submitted_at": "2026-08-13"
     },
     {
       "id": "leiden-openml-hippocampus",
@@ -65,7 +68,8 @@
       "deadline": "2026-10-15",
       "verified_at": "2026-08-14",
       "summary": "OpenML research infrastructure and scientific programming.",
-      "next_action": "Reverify posting, obtain consent from two references, review PDFs, and finish portal."
+      "next_action": "Reverify posting, obtain consent from two references, review PDFs, and finish portal.",
+      "submitted_at": null
     },
     {
       "id": "nist-dsai-rse",
@@ -81,7 +85,8 @@
       "deadline": null,
       "verified_at": "2026-08-12",
       "summary": "Research software and sustainable AI-for-science infrastructure.",
-      "next_action": "Find current official vacancy and confirm eligibility before tailoring."
+      "next_action": "Find current official vacancy and confirm eligibility before tailoring.",
+      "submitted_at": null
     },
     {
       "id": "dartmouth-open-neuroscience-rse",
@@ -97,7 +102,8 @@
       "deadline": null,
       "verified_at": "2026-08-12",
       "summary": "FAIR, open, reproducible neuroscience software and data infrastructure.",
-      "next_action": "Reverify official posting, sponsorship, and current application requirements."
+      "next_action": "Reverify official posting, sponsorship, and current application requirements.",
+      "submitted_at": null
     },
     {
       "id": "tu-delft-opynsim-rse",
@@ -113,7 +119,8 @@
       "deadline": "2026-08-27",
       "verified_at": "2026-08-12",
       "summary": "Python API design, C++ interoperability, testing, and open research software.",
-      "next_action": "Reverify immediately; then tailor CV and motivation letter."
+      "next_action": "Reverify immediately; then tailor CV and motivation letter.",
+      "submitted_at": null
     },
     {
       "id": "uchicago-dsi-rse",
@@ -125,11 +132,12 @@
       "url": "https://uchicago.wd5.myworkdayjobs.com/en-US/External/job/Chicago-IL/Research-Software-Engineer_JR34503",
       "fit_score": 96,
       "priority": "A",
-      "status": "needs_reverification",
+      "status": "submitted",
       "deadline": null,
-      "verified_at": "2026-08-12",
+      "verified_at": "2026-08-23",
       "summary": "Full-stack, GIS, AI, and reusable software for social-good research.",
-      "next_action": "Reverify and assess concurrent-project load before tailoring."
+      "next_action": "Await an update; check the candidate portal or email after August 30, 2026 if needed.",
+      "submitted_at": "2026-08-23"
     },
     {
       "id": "inria-numpex-guix",
@@ -145,7 +153,8 @@
       "deadline": "2026-08-31",
       "verified_at": "2026-08-12",
       "summary": "Scientific packaging, CI, reproducibility, and free software for HPC.",
-      "next_action": "Reverify posting, salary, work authorization, and restricted-zone terms."
+      "next_action": "Reverify posting, salary, work authorization, and restricted-zone terms.",
+      "submitted_at": null
     },
     {
       "id": "gatech-csse-research-engineer",
@@ -161,7 +170,8 @@
       "deadline": "2026-12-31",
       "verified_at": "2026-08-20",
       "summary": "Open-rank scientific software engineering across research projects.",
-      "next_action": "Prepare a portfolio-forward research engineering packet."
+      "next_action": "Prepare a portfolio-forward research engineering packet.",
+      "submitted_at": null
     },
     {
       "id": "amnh-visualization-data-specialist",
@@ -177,7 +187,8 @@
       "deadline": null,
       "verified_at": "2026-08-12",
       "summary": "Scientific visualization software and data support.",
-      "next_action": "Reverify role and evaluate onsite/support load."
+      "next_action": "Reverify role and evaluate onsite/support load.",
+      "submitted_at": null
     },
     {
       "id": "kth-chains-research-engineer",
@@ -193,7 +204,8 @@
       "deadline": "2026-08-30",
       "verified_at": "2026-08-12",
       "summary": "Research engineering in an academic software setting.",
-      "next_action": "Reverify official posting and immigration support."
+      "next_action": "Reverify official posting and immigration support.",
+      "submitted_at": null
     },
     {
       "id": "ecmwf-scientific-data-encoding-rse",
@@ -209,7 +221,8 @@
       "deadline": "2026-08-23",
       "verified_at": "2026-08-12",
       "summary": "Scientific data formats, reliable software, and weather/climate infrastructure.",
-      "next_action": "Reverify immediately and apply only if eligibility/location are viable."
+      "next_action": "Reverify immediately and apply only if eligibility/location are viable.",
+      "submitted_at": null
     },
     {
       "id": "berkeley-bids-agentic-ai-rse",
@@ -225,7 +238,8 @@
       "deadline": null,
       "verified_at": "2026-08-20",
       "summary": "Open-source research software for agentic AI systems.",
-      "next_action": "Recheck requirements and generate resume, cover letter, and portfolio packet."
+      "next_action": "Recheck requirements and generate resume, cover letter, and portfolio packet.",
+      "submitted_at": null
     },
     {
       "id": "4tu-researchdata-open-source-software-engineer",
@@ -241,7 +255,8 @@
       "deadline": "2026-09-06",
       "verified_at": "2026-08-20",
       "summary": "Open-source software for durable research-data infrastructure.",
-      "next_action": "Confirm visa/relocation language and tailor a research-data/open-source CV."
+      "next_action": "Confirm visa/relocation language and tailor a research-data/open-source CV.",
+      "submitted_at": null
     },
     {
       "id": "berkeley-bids-lightcone-product-engineer",
@@ -257,7 +272,8 @@
       "deadline": null,
       "verified_at": "2026-08-20",
       "summary": "Product engineering for open research and data tooling.",
-      "next_action": "Verify product/research balance and tailor a systems/product engineering packet."
+      "next_action": "Verify product/research balance and tailor a systems/product engineering packet.",
+      "submitted_at": null
     },
     {
       "id": "cambridge-senior-ai-rse",
@@ -273,7 +289,8 @@
       "deadline": "2026-08-28",
       "verified_at": "2026-08-20",
       "summary": "Senior AI research software engineering in an interdisciplinary computing center.",
-      "next_action": "Confirm essential criteria and sponsorship, then tailor CV and cover letter."
+      "next_action": "Confirm essential criteria and sponsorship, then tailor CV and cover letter.",
+      "submitted_at": null
     },
     {
       "id": "leiden-junior-rse-sustainability",
@@ -289,7 +306,8 @@
       "deadline": "2026-12-21",
       "verified_at": "2026-08-20",
       "summary": "Full-stack research software for sustainability science.",
-      "next_action": "Assess junior-title compensation/scope and tailor a sustainability-focused CV."
+      "next_action": "Assess junior-title compensation/scope and tailor a sustainability-focused CV.",
+      "submitted_at": null
     },
     {
       "id": "embl-ebi-biostudies-software-engineer",
@@ -305,7 +323,8 @@
       "deadline": "2026-08-23",
       "verified_at": "2026-08-20",
       "summary": "Software engineering for a major life-science research-data repository.",
-      "next_action": "Reverify immediately and assess language/domain requirements."
+      "next_action": "Reverify immediately and assess language/domain requirements.",
+      "submitted_at": null
     },
     {
       "id": "salk-rse-ai-research-computing",
@@ -321,7 +340,8 @@
       "deadline": null,
       "verified_at": "2026-08-20",
       "summary": "AI and research-computing software in a neuroscience institute.",
-      "next_action": "Confirm leveling, onsite expectations, and AI/HPC depth before tailoring."
+      "next_action": "Confirm leveling, onsite expectations, and AI/HPC depth before tailoring.",
+      "submitted_at": null
     },
     {
       "id": "berkeley-bids-user-interfaces",
@@ -337,7 +357,8 @@
       "deadline": null,
       "verified_at": "2026-08-20",
       "summary": "User-interface engineering for open research software.",
-      "next_action": "Compare overlap and application limits with the other BIDS roles."
+      "next_action": "Compare overlap and application limits with the other BIDS roles.",
+      "submitted_at": null
     },
     {
       "id": "berkeley-bids-computational-infrastructure",
@@ -353,7 +374,8 @@
       "deadline": null,
       "verified_at": "2026-08-20",
       "summary": "Computational infrastructure for open research software.",
-      "next_action": "Review infrastructure/on-call expectations before investing."
+      "next_action": "Review infrastructure/on-call expectations before investing.",
+      "submitted_at": null
     },
     {
       "id": "berkeley-bids-mts-rse",
@@ -369,7 +391,8 @@
       "deadline": null,
       "verified_at": "2026-08-20",
       "summary": "Open-source research software engineering at BIDS.",
-      "next_action": "Compare essential criteria with Agentic AI and Lightcone; choose a coherent application set."
+      "next_action": "Compare essential criteria with Agentic AI and Lightcone; choose a coherent application set.",
+      "submitted_at": null
     },
     {
       "id": "berkeley-bids-open-source-product",
@@ -385,7 +408,8 @@
       "deadline": null,
       "verified_at": "2026-08-20",
       "summary": "Product-oriented open-source research software engineering.",
-      "next_action": "Compare with Lightcone role and avoid redundant applications unless encouraged."
+      "next_action": "Compare with Lightcone role and avoid redundant applications unless encouraged.",
+      "submitted_at": null
     },
     {
       "id": "cambridge-senior-ml-rse",
@@ -401,7 +425,8 @@
       "deadline": "2026-08-28",
       "verified_at": "2026-08-20",
       "summary": "Machine-learning research software engineering at ICCS.",
-      "next_action": "Compare essential ML criteria with evidence before applying."
+      "next_action": "Compare essential ML criteria with evidence before applying.",
+      "submitted_at": null
     },
     {
       "id": "cambridge-sustainable-aviation-rse",
@@ -417,7 +442,8 @@
       "deadline": "2026-08-24",
       "verified_at": "2026-08-20",
       "summary": "Research software engineering for sustainable aviation.",
-      "next_action": "Reverify immediately and assess scientific-domain and seniority criteria."
+      "next_action": "Reverify immediately and assess scientific-domain and seniority criteria.",
+      "submitted_at": null
     },
     {
       "id": "embl-imaging-centre-software-engineer",
@@ -433,7 +459,8 @@
       "deadline": "2026-09-22",
       "verified_at": "2026-08-20",
       "summary": "Scientific software for advanced biological imaging.",
-      "next_action": "Open the linked vacancy, confirm exact requirements, and tailor visualization evidence."
+      "next_action": "Open the linked vacancy, confirm exact requirements, and tailor visualization evidence.",
+      "submitted_at": null
     },
     {
       "id": "birmingham-rse-automation-devops",
@@ -449,8 +476,8 @@
       "deadline": "2026-08-23",
       "verified_at": "2026-08-20",
       "summary": "Automation and DevOps support for university research software.",
-      "next_action": "Find official posting and quantify triage/housekeeping/on-call duties."
+      "next_action": "Find official posting and quantify triage/housekeeping/on-call duties.",
+      "submitted_at": null
     }
   ]
 }
-
