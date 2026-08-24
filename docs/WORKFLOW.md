@@ -9,6 +9,14 @@
 5. Open a focused draft pull request.
 6. Merge only after Alan's review.
 
+## Recording a confirmed submission
+
+1. Confirm the application was sent; do not infer it from a saved draft, opened portal, or recruiter conversation.
+2. In `data/jobs.json`, set `status` to `submitted`, set `submitted_at` to the owner-approved `YYYY-MM-DD` date, and refresh `generated_at`.
+3. Keep `submitted_at` as `null` for every non-submitted record. Do not add confirmation links, packet names, portal URLs, correspondence, times, or private notes.
+4. Run validation and the deterministic build, review the exact diff, then open a focused draft PR.
+5. After merge to `master`, GitHub Pages deploys the new static snapshot. The submitted card appears in the closed history section automatically.
+
 ## Changing the site
 
 Keep behavior dependency-free unless a reviewed requirement justifies more infrastructure. Test:

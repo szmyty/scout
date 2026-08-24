@@ -66,6 +66,10 @@ const elements = {
   filters: document.querySelector("#filters"),
   footerSnapshot: document.querySelector("#footer-snapshot"),
   grid: document.querySelector("#job-grid"),
+  submittedCount: document.querySelector("#submitted-count"),
+  submittedDetails: document.querySelector("#submitted-details"),
+  submittedGrid: document.querySelector("#submitted-job-grid"),
+  submittedSection: document.querySelector("#submitted-section"),
   lane: document.querySelector("#lane-filter"),
   ownerBranch: document.querySelector("#owner-branch"),
   ownerButton: document.querySelector("#owner-mode-button"),
@@ -322,6 +326,7 @@ function renderCard(job) {
   const priority = fragment.querySelector(".priority-pill");
   const fitRing = fragment.querySelector(".fit-ring");
   const deadline = fragment.querySelector(".job-deadline");
+  const dateLabel = fragment.querySelector(".job-date-label");
   const publicLink = fragment.querySelector(".job-link");
   const ownerLink = fragment.querySelector(".job-owner-link");
   const copyButton = fragment.querySelector(".job-copy");
@@ -348,10 +353,17 @@ function renderCard(job) {
   );
   fragment.querySelector(".fit-value").textContent = job.fit_score;
 
-  const deadlineInfo = deadlineDetail(job);
-  deadline.textContent = deadlineInfo.label;
-  if (deadlineInfo.className) {
-    deadline.classList.add(deadlineInfo.className);
+  if (job.status === "submitted") {
+    dateLabel.textContent = "Submitted";
+    deadline.textContent = job.submitted_at
+      ? formatDate(job.submitted_at)
+      : "Confirmed sent";
+  } else {
+    const deadlineInfo = deadlineDetail(job);
+    deadline.textContent = deadlineInfo.label;
+    if (deadlineInfo.className) {
+      deadline.classList.add(deadlineInfo.className);
+    }
   }
 
   if (job.url) {
@@ -419,19 +431,38 @@ function renderActiveFilters() {
 
 function renderQueue() {
   const jobs = filteredJobs();
-  elements.grid.replaceChildren();
-  const fragment = document.createDocumentFragment();
+  const activeJobs = jobs.filter((job) => job.status !== "submitted");
+  const submittedJobs = jobs.filter((job) => job.status === "submitted");
 
-  for (const job of jobs) {
-    fragment.append(renderCard(job));
+  elements.grid.replaceChildren();
+  const activeFragment = document.createDocumentFragment();
+  for (const job of activeJobs) {
+    activeFragment.append(renderCard(job));
+  }
+  elements.grid.append(activeFragment);
+  elements.grid.setAttribute("aria-busy", "false");
+
+  elements.submittedGrid.replaceChildren();
+  const submittedFragment = document.createDocumentFragment();
+  for (const job of submittedJobs) {
+    submittedFragment.append(renderCard(job));
+  }
+  elements.submittedGrid.append(submittedFragment);
+  elements.submittedGrid.setAttribute("aria-busy", "false");
+  elements.submittedCount.textContent = submittedJobs.length;
+  elements.submittedSection.classList.toggle(
+    "is-hidden",
+    submittedJobs.length === 0,
+  );
+
+  if (elements.status.value === "submitted" && submittedJobs.length) {
+    elements.submittedDetails.open = true;
   }
 
-  elements.grid.append(fragment);
-  elements.grid.setAttribute("aria-busy", "false");
   elements.resultCount.textContent =
     jobs.length + " of " + state.jobs.length + " opportunities";
   elements.emptyState.classList.toggle("is-hidden", jobs.length !== 0);
-  elements.grid.classList.toggle("is-hidden", jobs.length === 0);
+  elements.grid.classList.toggle("is-hidden", activeJobs.length === 0);
   renderActiveFilters();
   updateQueryState();
 }

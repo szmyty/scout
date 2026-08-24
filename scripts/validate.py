@@ -27,6 +27,7 @@ JOB_FIELDS = {
     "fit_score",
     "priority",
     "status",
+    "submitted_at",
     "deadline",
     "verified_at",
     "summary",
@@ -102,8 +103,8 @@ def validate_data(payload: object) -> list[str]:
         errors.append(
             "data/jobs.json: top-level fields differ from the public allowlist"
         )
-    if payload.get("schema_version") != "1.0.0":
-        errors.append("data/jobs.json: schema_version must be 1.0.0")
+    if payload.get("schema_version") != "1.1.0":
+        errors.append("data/jobs.json: schema_version must be 1.1.0")
     if not valid_date(payload.get("generated_at")):
         errors.append("data/jobs.json: generated_at must be an ISO date")
     if not isinstance(payload.get("notice"), str) or not payload["notice"].strip():
@@ -147,6 +148,10 @@ def validate_data(payload: object) -> list[str]:
 
         if job.get("status") not in STATUSES:
             errors.append(f"{prefix}: unsupported status {job.get('status')!r}")
+        if job.get("status") == "submitted" and job.get("submitted_at") is None:
+            errors.append(f"{prefix}: submitted jobs require submitted_at")
+        if job.get("status") != "submitted" and job.get("submitted_at") is not None:
+            errors.append(f"{prefix}: only submitted jobs may include submitted_at")
         if job.get("priority") not in PRIORITIES:
             errors.append(f"{prefix}: unsupported priority {job.get('priority')!r}")
         if job.get("lane") not in LANES:
@@ -156,7 +161,7 @@ def validate_data(payload: object) -> list[str]:
         if not isinstance(score, int) or isinstance(score, bool) or not 0 <= score <= 100:
             errors.append(f"{prefix}: fit_score must be an integer from 0 to 100")
 
-        for field in ("deadline", "verified_at"):
+        for field in ("submitted_at", "deadline", "verified_at"):
             if not valid_date(job.get(field)):
                 errors.append(f"{prefix}: {field} must be an ISO date or null")
 
@@ -202,6 +207,9 @@ def validate_site_source() -> list[str]:
     required_html = (
         "<title>Scout — Research Career Queue</title>",
         'id="job-grid"',
+        'id="submitted-section"',
+        'id="submitted-details"',
+        'id="submitted-job-grid"',
         'id="filters"',
         'id="owner-dialog"',
         'id="job-card-template"',
